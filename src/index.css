@@ -1,13 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.4331933456976541) 0%,
+    rgba(116, 121, 9, 0.14467793953518904) 35%,
+    rgba(0, 212, 255, 0.5900560907956933) 100%
+  );
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.form {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  border: 5px solid black;
+  background-color: whitesmoke;
+}
+input[type="text"],
+select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+/* .button {
+  padding: 10px;
+  margin-left: 10%;
+} */
+
+form {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+form button {
+  width: 100px;
+  padding: 10px;
+  background-color: rgb(59, 209, 159);
+}
+
+.textarea {
+  width: 30%;
+  height: 140px;
+}
+
+.formPart {
+  margin-left: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.next {
+  padding: 10px;
+  margin-right: 70%;
+}
+
+.workingExperience {
+  margin-left: 40%;
+}
+
+.projects {
+  margin-left: 40%;
 }

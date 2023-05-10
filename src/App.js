@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import PersonalDataForm from "./components/PersonalDataForm";
+import Resume from "./components/Resume";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { DataProvider } from "./context/DataContext";
+import Experience from "./components/Experience";
+import AdditionalForm from "./pages/AdditionalForm";
 function App() {
+  const router = createBrowserRouter([
+    { path: "/", element: <PersonalDataForm /> },
+    { path: "/resume", element: <Resume /> },
+    {
+      path: "/experience",
+      element: <Experience />,
+      children: [
+        { path: "/experience/:selectedItem", element: <AdditionalForm /> },
+      ],
+    },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <DataProvider>
+        <p>CV Maker </p>
+        <RouterProvider router={router} />
+      </DataProvider>
     </div>
   );
 }
