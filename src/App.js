@@ -6,9 +6,11 @@ import Experience from "./components/Experience";
 import AdditionalForm from "./pages/AdditionalForm";
 import Template1 from "./templates/Template1";
 import Template2 from "./templates/Template2";
+import EntryPage from "./components/EntryPage";
 function App() {
   const router = createBrowserRouter([
-    { path: "/", element: <PersonalDataForm /> },
+    { path: "/", element: <EntryPage /> },
+    { path: "/personalData", element: <PersonalDataForm /> },
     { path: "/resume", element: <Resume /> },
     { path: "/template1", element: <Template1 /> },
     { path: "/template2", element: <Template2 /> },
