@@ -11,34 +11,46 @@ export const DataProvider = ({ children }) => {
     git: "",
   });
   const [descriptionData, setDescriptionData] = useState("");
-  const [workingExperienceData, setWorkingExperienceData] = useState({
-    title: "",
-    employer: "",
-    description: "",
-    from: "",
-    to: "",
-  });
-  const [personalProjectData, setPersonalProjectData] = useState({
-    title: "",
-    from: "",
-    description: "",
-  });
-  const [facultyProjectData, setFacultyProjectData] = useState({
-    title: "",
-    from: "",
-    description: "",
-  });
 
-  const [proffesionalSkills, setProffesionalSkills] = useState({
-    tehnologie: "",
-    rate: "",
-  });
+  const [workingExperienceData, setWorkingExperienceData] = useState([
+    {
+      title: "",
+      employer: "",
+      description: "",
+      from: "",
+      to: "",
+    },
+  ]);
 
-  const [educationData, setEducationData] = useState({
-    school: "",
-    city: "",
-    year: "",
-  });
+  const [personalProjectData, setPersonalProjectData] = useState([
+    {
+      title: "",
+      from: "",
+      description: "",
+    },
+  ]);
+  const [facultyProjectData, setFacultyProjectData] = useState([
+    {
+      title: "",
+      from: "",
+      description: "",
+    },
+  ]);
+
+  const [proffesionalSkills, setProffesionalSkills] = useState([
+    {
+      tehnologie: "",
+      rate: "",
+    },
+  ]);
+
+  const [educationData, setEducationData] = useState([
+    {
+      school: "",
+      city: "",
+      year: "",
+    },
+  ]);
 
   return (
     <DataContext.Provider

@@ -7,48 +7,77 @@ const WorkingExperience = () => {
     useContext(DataContext);
   const navigate = useNavigate();
 
-  const handleNext = (e) => {
-    e.preventDefault();
-    navigate("/experience/personal");
+  const addHandler = () => {
+    setWorkingExperienceData([
+      ...workingExperienceData,
+      { title: "", employer: "", description: "", from: "", to: "" },
+    ]);
   };
-  const handleForm = (e) => {
-    setWorkingExperienceData((prev) => ({
+
+  /*  const handleNext = (e) => {
+    e.preventDefault();
+    console.log(workingExperienceData);
+    navigate("/experience/personal");
+  }; */
+  const handleForm = (e, i) => {
+    const { name, value } = e.target;
+    /*  setWorkingExperienceData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }));
+    })); */
+
+    /*   setWorkingExperienceData((prev) =>
+      prev.map((data) => ({ ...data, [name]: value }))
+    ); */
+    const onchangeVal = [...workingExperienceData];
+    onchangeVal[i][name] = value;
+    setWorkingExperienceData(onchangeVal);
   };
   return (
     <div className="workingExperience">
-      <input
-        type="text"
-        placeholder="job title"
-        name="title"
-        onChange={handleForm}
-        value={workingExperienceData.title}
-      />
-      <input
-        type="text"
-        placeholder="Employer"
-        name="employer"
-        onChange={handleForm}
-        value={workingExperienceData.employer}
-      />
-      <textarea
-        placeholder="description"
-        name="description"
-        onChange={handleForm}
-        value={workingExperienceData.description}
-      />
-      <input
-        type="text"
-        placeholder="from the"
-        name="from"
-        onChange={handleForm}
-        value={workingExperienceData.from}
-      />
-      <input type="text" placeholder="to" name="to" onChange={handleForm} />
-      <button>Add</button>
-      <button onClick={handleNext}>Next</button>
+      {workingExperienceData?.map((val, i) => {
+        return (
+          <div key={i} className="partWorkingExperience">
+            <input
+              type="text"
+              placeholder="job title"
+              name="title"
+              onChange={(e) => handleForm(e, i)}
+              value={val.title}
+            />
+            <input
+              type="text"
+              placeholder="Employer"
+              name="employer"
+              onChange={(e) => handleForm(e, i)}
+              value={val.employer}
+            />
+            <textarea
+              placeholder="description"
+              name="description"
+              onChange={(e) => handleForm(e, i)}
+              value={val.description}
+            />
+            <input
+              type="text"
+              placeholder="from the"
+              name="from"
+              onChange={(e) => handleForm(e, i)}
+              value={val.from}
+            />
+            <input
+              type="text"
+              placeholder="to"
+              name="to"
+              onChange={(e) => handleForm(e, i)}
+              value={val.to}
+            />
+          </div>
+        );
+      })}
+      <button onClick={addHandler}>Add</button>
+      {/*       <button onClick={handleNext}>Next</button>
+       */}{" "}
     </div>
   );
 };

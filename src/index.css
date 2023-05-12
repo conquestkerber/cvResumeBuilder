@@ -26,14 +26,14 @@ code {
 
 .form {
   margin-left: 10%;
-  margin-right: 10%;
+  margin-right: 20%;
   margin-top: 10%;
   border: 5px solid black;
   background-color: whitesmoke;
 }
 input[type="text"],
 select {
-  width: 30%;
+  width: auto;
   padding: 12px 20px;
   margin: 8px 0;
   display: flex;
@@ -83,10 +83,23 @@ form button {
   margin-right: 70%;
 }
 
-.workingExperience {
-  margin-left: 40%;
+.partWorkingExperience {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 .projects {
   margin-left: 40%;
+}
+
+.error {
+  color: red;
+}
+
+.partProjects {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  max-width: 50%;
 }
